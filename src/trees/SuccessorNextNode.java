@@ -6,6 +6,6 @@ public class SuccessorNextNode {
 
     @Test
     public void workSuccessorNextNode() {
-        System.out.println("Work out successor next node");
+        System.out.println("Work out successor next node- from git");
     }
 }
