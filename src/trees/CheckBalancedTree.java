@@ -64,6 +64,7 @@ public class CheckBalancedTree {
             System.out.print(" " + node.key);
             inorderTraversal(node.right);
         }
+
     }
 
 
