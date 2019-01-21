@@ -52,7 +52,7 @@ public class CheckBalancedTree {
         int diff = leftHeight-rightHeight;
         System.out.println("r: "+rightHeight);
 
-        //
+
         if (diff <=1 && isTreeBalanced(root.left) && isTreeBalanced(root.right))
             return true;
         return false;
