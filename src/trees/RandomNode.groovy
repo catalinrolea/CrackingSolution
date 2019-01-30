@@ -80,7 +80,10 @@ class RandomNode {
                 return node.left;
             //case 3: node with two children:
                 // - get inorder successor(element on the last level
+                //replace the node with 2 children that will be deleted with the minimum node from right subtree(check
+                // all elements from right subtree, get the minimum and set it as a key)
             node.key = minValueSubtree(node.right); // set root key to be the last value of the right subtree fom key deleted
+            println("min: "+node.key)
             node.right = deleteNode3WaysRec(node.right, node.key);
 
         }
@@ -115,6 +118,7 @@ class RandomNode {
         treeNode.INSERTStandard(20);
         treeNode.INSERTStandard(10);
         treeNode.INSERTStandard(30);
+        treeNode.INSERTStandard(29);
         treeNode.INSERTStandard(15);
         treeNode.INSERTStandard(17);
         treeNode.INSERTStandard(5);
@@ -123,7 +127,7 @@ class RandomNode {
         treeNode.inorder(treeNode.root);
         System.out.println();
 
-        treeNode.deleteNode3WaysRec(treeNode.root,5)
+        treeNode.deleteNode3WaysRec(treeNode.root,20)
         treeNode.inorder(treeNode.root);
     }
 }
