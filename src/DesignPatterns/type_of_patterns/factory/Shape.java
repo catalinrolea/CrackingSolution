@@ -1,4 +1,4 @@
-package DesignPatterns.factory_pattern.factory;
+package DesignPatterns.type_of_patterns.factory;
 
 public interface Shape {
 
