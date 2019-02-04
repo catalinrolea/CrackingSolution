@@ -1,4 +1,4 @@
-package DesignPatterns.factory_pattern;
+package DesignPatterns.factory_pattern.factory;
 
 import org.junit.Test;
 

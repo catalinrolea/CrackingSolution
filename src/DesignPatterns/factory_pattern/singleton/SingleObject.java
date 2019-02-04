@@ -1,4 +1,4 @@
-package DesignPatterns.singleton;
+package DesignPatterns.factory_pattern.singleton;
 
 public class SingleObject {
     private static SingleObject instance = new SingleObject();
