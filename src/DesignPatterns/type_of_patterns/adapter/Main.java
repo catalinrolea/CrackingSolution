@@ -9,6 +9,7 @@ public class Main {
         Vrabie vrabie = new Vrabie();
         PlasticToyDuck plasticToyDuck = new PlasticToyDuck();
         ToyDuck birdAdapter = new BirdAdapter(vrabie);
+
         vrabie.fly();
         vrabie.makeSound();
 
