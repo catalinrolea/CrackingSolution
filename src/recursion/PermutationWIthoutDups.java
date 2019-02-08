@@ -3,36 +3,53 @@ package recursion;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.logging.*;
 
+/*
+1.1 Permutation without duplicates
+1.2 Permutation with duplicates
+ */
 public class PermutationWIthoutDups {
 
-    private final static Logger logger = Logger.getLogger(PermutationWIthoutDups.class.getName());
+    private static final Logger logger = Logger.getLogger( PermutationWIthoutDups.class.getName() );
+
 
     ArrayList<String> getAllPermutation(String str) {
-        int len = str.length();
+
+
+
         ArrayList<String> result = new ArrayList<>();
-        if (len == 0) {
+        if (str.length() == 0) {
             result.add("");
             return result;
         }
-        for (int i = 0; i < len; i++) {
-            //remove char i and find permutations of remaining chars
+        ArrayList<String> permutations = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             String before = str.substring(0, i);
-            String after = str.substring(i + 1, len);
-            ArrayList<String> partial = getAllPermutation(before + after);
-            for (String s : partial) {
-                result.add(str.charAt(i) + s);
+            String after = str.substring(i + 1, str.length());
+            permutations = getAllPermutation(before + after);
+            for (String index : permutations) {
+                  result.add(str.charAt(i) + index);
+
             }
         }
+
 
         return result;
     }
 
     @Test
     public void test() {
-        String str = "ab";
-        for (String index : getAllPermutation(str)){
+        String str = "aba";
+        Set<String> set = new HashSet<>();
+        for (String index : getAllPermutation(str)) {
+             logger.info(index);
+             set.add(index);
+        }
+        logger.info("-------------------");
+        for (String index : set){
             logger.info(index);
         }
 
