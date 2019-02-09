@@ -30,9 +30,8 @@ public class PermutationWIthoutDups {
             String before = str.substring(0, i);
             String after = str.substring(i + 1, str.length());
             permutations = getAllPermutation(before + after);
-            for (String index : permutations) {
-                  result.add(str.charAt(i) + index);
-
+            for (String s : permutations) {
+                  result.add(str.charAt(i) + s);
             }
         }
 
@@ -42,7 +41,7 @@ public class PermutationWIthoutDups {
 
     @Test
     public void test() {
-        String str = "aba";
+        String str = "abc";
         Set<String> set = new HashSet<>();
         for (String index : getAllPermutation(str)) {
              logger.info(index);
