@@ -11,8 +11,10 @@ public class MainObserver {
         CricketData cricketData = new CricketData();
         cricketData.registerObserver(averageScoreDisplay);
         cricketData.dataChanged();
+        averageScoreDisplay.update(100,200,300);
+        cricketData.registerObserver(averageScoreDisplay);
         System.out.println("-------------------");
-        //cricketData.unregisterObserver(averageScoreDisplay);
-        cricketData.dataChanged();
+       // cricketData.unregisterObserver(averageScoreDisplay);
+       // cricketData.dataChanged();
     }
 }
